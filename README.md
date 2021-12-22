@@ -10,7 +10,7 @@
 
 ### 登录
 <a>
-    <img src=".\screenshots\2.png" alt="vue">
+    <img src=".\screenshots\3.png" alt="vue">
 </a>
 
 ### 首页
@@ -23,18 +23,22 @@
 原作者lin-xin (微信号：linxin_20)
 
 ```
+安装步骤
 git clone git@github.com:17628279559/highSQL_private.git      // 把模板下载到本地
 
-//自己去下载node.js 然后用npm配置cnpm 
-cnpm install -g @vue/cli
-安装vue最新版
 
-cnpm install         // 安装项目依赖，需要在项目目录下
+cnpm install -g @vue/cli  //自己去下载node.js 然后用npm配置cnpm   然后安装vue最新版
 
-// 开启服务器，浏览器访问 http://localhost:8080
-npm run serve
+
+cnpm install    // 安装项目依赖，需要在项目目录下，安装完成会在根目录下生成node_modules     
+
+
+python ./manage.py runserver  //到python\stock目录下，cmd,开启django服务 提供接口，服务器请
+
+
+npm run serve   // 开启服务器，浏览器访问 http://localhost:3000，可能端口不一样
 //vue2.*版本为npm run dev 当然也可以在package.js里面配置
 
-// 执行构建命令，生成的dist文件夹放在服务器下即可访问
-npm run build
+
+npm run build   // 执行构建命令，生成的dist文件夹放在服务器下即可访问
 ```
