@@ -52,14 +52,7 @@ const routes = [
                     title: '找不到页面'
                 },
                 component: () => import (/* webpackChunkName: "404" */ '../views/404.vue')
-            }, {
-                path: '/user',
-                name: 'user',
-                meta: {
-                    title: '个人中心'
-                },
-                component: () => import (/* webpackChunkName: "user" */ '../views/User.vue')
-            },
+            }, 
 			
         ]
     }, {

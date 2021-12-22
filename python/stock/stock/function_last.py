@@ -48,7 +48,16 @@ def function_A(request):
 	for item in res:
 		while data[index]['movieid'] != item['movieid']:
 			index+=1
-		data[index]["tags"]=item['tags']
+		tagid = []
+		relevance = []
+		tag_name = []
+		for tag in item['tags']:
+			tagid.append(str(tag["tagid"]))
+			relevance.append(str(tag["relevance"]))
+			tag_name.append(tag["tag_name"])
+		data[index]["tagid"]='\n'.join(tagid)
+		data[index]["relevance"]='\n'.join(relevance)
+		data[index]["tag_name"]='\n'.join(tag_name)
 		index = 0
 	res = {}
 	res['name'] = result[0]['name']

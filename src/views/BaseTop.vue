@@ -147,7 +147,7 @@
 	.table-td-thumb {
 	    display: block;
 	    margin: auto;
-	    width: 40px;
-	    height: 40px;
+	    width: 50px;
+	    height: 201px;
 	}
 </style>

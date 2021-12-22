@@ -29,10 +29,9 @@
                     </span>
                     <template #dropdown>
                         <el-dropdown-menu>
-                            <a href="https://github.com/17628279559/vue-manage-system" target="_blank">
+                            <a href="https://github.com/17628279559/highSQL_private" target="_blank">
                                 <el-dropdown-item>项目仓库</el-dropdown-item>
                             </a>
-                            <el-dropdown-item command="user">个人中心</el-dropdown-item>
                             <el-dropdown-item divided command="loginout">退出登录</el-dropdown-item>
                         </el-dropdown-menu>
                     </template>

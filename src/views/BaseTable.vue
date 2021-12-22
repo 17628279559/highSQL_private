@@ -59,12 +59,12 @@
 				  label="标签id">
 				</el-table-column>
 				<el-table-column
-				  prop="relevance"
-				  label="标签相关度">
+				  prop="tag_name"
+				  label="标签名称">
 				</el-table-column>
 				<el-table-column
 				  prop="relevance"
-				  label="标签名称">
+				  label="标签相关度">
 				</el-table-column>
 			  </el-table>
               
@@ -90,7 +90,7 @@ import Axios from 'axios';
                     if (response.data) {
                         this.tableData = response.data.data;
 						var namee = document.getElementById("name_");
-						namee.innerHTML = response.data.name + "看过的电影有"
+						namee.innerHTML = response.data.name + "看过的电影有" + response.data.data.length + "个"
                     }
         	});
           },

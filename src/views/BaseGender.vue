@@ -70,10 +70,10 @@ import Axios from 'axios';
       return {
         options: [{
           value: '选项1',
-          label: '男'
+          label: 'Man'
         }, {
           value: '选项2',
-          label: '女'
+          label: 'Female'
         }],
 		tableData: [],
         value: ''
@@ -94,10 +94,10 @@ import Axios from 'axios';
 </script>
 
 <style scoped>
-.table-td-thumb {
-    display: block;
-    margin: auto;
-    width: 40px;
-    height: 40px;
-}
+	.table-td-thumb {
+	    display: block;
+	    margin: auto;
+	    width: 50px;
+	    height: 201px;
+	}
 </style>
