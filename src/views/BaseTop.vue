@@ -9,7 +9,7 @@
   
   <div class="container">
               <div class="handle-box">
-                  <el-select v-model="value" filterable placeholder="请选择">
+                  <el-select v-model="value" filterable placeholder="请选择" id="inputText" style="width: 30%;">
                       <el-option
                         v-for="item in options"
                         :key="item.value"
@@ -17,6 +17,7 @@
                         :value="item.value">
                       </el-option>
                     </el-select>
+                    <el-button type="primary" @click="adddata()" style="width: 15%;">查询</el-button>
               </div>
   			<el-card>
   				<span>风格TOPk查询</span>
@@ -124,39 +125,21 @@
           value: '选项19',
           label: 'Film-Noir'
         }],
-		tableData: [{
-		          date: '2016-05-03',
-		          name: '王小虎',
-		          address: '上海市普陀区金沙江路 1518 弄',
-				  picture: 'https://img9.doubanio.com/view/photo/s_ratio_poster/public/p2565956404.jpg'
-		        }, {
-		          date: '2016-05-02',
-		          name: '王小虎',
-		          address: '上海市普陀区金沙江路 1518 弄'
-		        }, {
-		          date: '2016-05-04',
-		          name: '王小虎',
-		          address: '上海市普陀区金沙江路 1518 弄'
-		        }, {
-		          date: '2016-05-01',
-		          name: '王小虎',
-		          address: '上海市普陀区金沙江路 1518 弄'
-		        }, {
-		          date: '2016-05-08',
-		          name: '王小虎',
-		          address: '上海市普陀区金沙江路 1518 弄'
-		        }, {
-		          date: '2016-05-06',
-		          name: '王小虎',
-		          address: '上海市普陀区金沙江路 1518 弄'
-		        }, {
-		          date: '2016-05-07',
-		          name: '王小虎',
-		          address: '上海市普陀区金沙江路 1518 弄'
-		        }],
+		tableData: [],
         value: ''
       }
-    }
+    },
+	  methods: {
+          adddata(){
+			    var type_of_movie = document.getElementById("inputText").value;
+				var api = "/api/genre/?type_of_movie="+type_of_movie;
+                Axios.get(api).then(response => {
+                    if (response.data) {
+                        this.tableData = response.data.data;
+                    }
+        	});
+          },
+        }
   }
 </script>
 

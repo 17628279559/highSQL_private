@@ -9,7 +9,7 @@
   
   <div class="container">
               <div class="handle-box">
-                  <el-select v-model="value" filterable placeholder="请选择">
+                  <el-select v-model="value" filterable placeholder="请选择" id="inputText" style="width: 30%;">
                       <el-option
                         v-for="item in options"
                         :key="item.value"
@@ -17,9 +17,10 @@
                         :value="item.value">
                       </el-option>
                     </el-select>
+					<el-button type="primary" @click="adddata()" style="width: 15%;">查询</el-button>
               </div>
   			<el-card>
-  				<span>性别推荐</span>
+  				<span id="name_">性别推荐</span>
   			</el-card>
 			<el-table
 			    :data="tableData"
@@ -63,6 +64,7 @@
 
 
 <script>
+import Axios from 'axios';
   export default {
     data() {
       return {
@@ -73,45 +75,21 @@
           value: '选项2',
           label: '女'
         }],
-		tableData: [{
-		          date: '2016-05-03',
-		          name: '王小虎',
-		          address: '上海市普陀区金沙江路 1518 弄',
-				  picture: 'C:/Users/zwt/Desktop/highSQL/src/assets/img/img.jpg'
-		        }, {
-		          date: '2016-05-02',
-		          name: '王小虎',
-		          address: '上海市普陀区金沙江路 1518 弄',
-				  picture: 'https://img9.doubanio.com/view/photo/s_ratio_poster/public/p2565956404.jpg'
-		        }, {
-		          date: '2016-05-02',
-		          name: '王小虎',
-		          address: '上海市普陀区金沙江路 1518 弄',
-				  picture: 'https://img9.doubanio.com/view/photo/s_ratio_poster/public/p2565956404.jpg'
-		        }, {
-		          date: '2016-05-02',
-		          name: '王小虎',
-		          address: '上海市普陀区金沙江路 1518 弄',
-				  picture: 'https://img9.doubanio.com/view/photo/s_ratio_poster/public/p2565956404.jpg'
-		        }, {
-		          date: '2016-05-02',
-		          name: '王小虎',
-		          address: '上海市普陀区金沙江路 1518 弄',
-				  picture: 'https://img9.doubanio.com/view/photo/s_ratio_poster/public/p2565956404.jpg'
-		        }, {
-		          date: '2016-05-02',
-		          name: '王小虎',
-		          address: '上海市普陀区金沙江路 1518 弄',
-				  picture: 'https://img9.doubanio.com/view/photo/s_ratio_poster/public/p2565956404.jpg'
-		        }, {
-		          date: '2016-05-02',
-		          name: '王小虎',
-		          address: '上海市普陀区金沙江路 1518 弄',
-				  picture: 'https://img9.doubanio.com/view/photo/s_ratio_poster/public/p2565956404.jpg'
-		        }],
+		tableData: [],
         value: ''
       }
-    }
+    },
+	methods: {
+          adddata(){
+			    var gender = document.getElementById("inputText").value;
+				var api = "/api/gender/?gender="+gender;
+                Axios.get(api).then(response => {
+                    if (response.data) {
+                        this.tableData = response.data.data;
+                    }
+        	});
+          },
+        }
   }
 </script>
 

@@ -39,7 +39,7 @@ def function_A(request):
 	for item in result_field:
 		data[index]["title"] = item["title"]
 		data[index]["url"]=item["url"]
-		data[index]["picture"]=item["picture"]
+		data[index]["picture"]= 'https://gitee.com/snaketao/douban-img/raw/master/imgg/'+str(data[index]['movieid'])+'.jpg'
 		index+=1
 	data = sorted(data,key=lambda x:x['timestamp'], reverse=True)
 	index = 0

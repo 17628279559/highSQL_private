@@ -1,9 +1,21 @@
+import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 
-export default {
-    base: './',
-    plugins: [vue()],
-    optimizeDeps: {
-        include: ['schart.js']
+
+// https://vitejs.dev/config/
+export default defineConfig({
+  base: './',
+  plugins: [vue()],
+  optimizeDeps: {
+      include: ['schart.js']
+  },
+  server: {
+    proxy: {
+      '/api': {
+        target: 'http://127.0.0.1:8000',	//实际请求地址
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api/, '')
+      },
     }
-}
+  }
+})

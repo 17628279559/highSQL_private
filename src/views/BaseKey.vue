@@ -9,7 +9,8 @@
   
   <div class="container">
               <div class="handle-box">
-                  <el-input v-model="input" placeholder="关键词"></el-input>
+                  <el-input v-model="input" placeholder="关键词" id="inputText" style="width: 30%;"></el-input>
+				  <el-button type="primary" @click="adddata()" style="width: 15%;">查询</el-button>
               </div>
   			<el-card>
   				<span>关键词查询</span>
@@ -51,39 +52,21 @@
   export default {
     data() {
       return {
-		tableData: [{
-		          date: '2016-05-03',
-		          name: '王小虎',
-		          address: '上海市普陀区金沙江路 1518 弄',
-				  picture: 'https://img9.doubanio.com/view/photo/s_ratio_poster/public/p2565956404.jpg'
-		        }, {
-		          date: '2016-05-02',
-		          name: '王小虎',
-		          address: '上海市普陀区金沙江路 1518 弄'
-		        }, {
-		          date: '2016-05-04',
-		          name: '王小虎',
-		          address: '上海市普陀区金沙江路 1518 弄'
-		        }, {
-		          date: '2016-05-01',
-		          name: '王小虎',
-		          address: '上海市普陀区金沙江路 1518 弄'
-		        }, {
-		          date: '2016-05-08',
-		          name: '王小虎',
-		          address: '上海市普陀区金沙江路 1518 弄'
-		        }, {
-		          date: '2016-05-06',
-		          name: '王小虎',
-		          address: '上海市普陀区金沙江路 1518 弄'
-		        }, {
-		          date: '2016-05-07',
-		          name: '王小虎',
-		          address: '上海市普陀区金沙江路 1518 弄'
-		        }],
+		tableData: [],
         value: ''
       }
-    }
+    },
+	methods: {
+          adddata(){
+			    var key_word = document.getElementById("inputText").value;
+				var api = "/api/keyword/?key_word="+key_word;
+                Axios.get(api).then(response => {
+                    if (response.data) {
+                        this.tableData = response.data.data;
+                    }
+        	});
+          },
+        }
   }
 </script>
 
