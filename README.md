@@ -9,13 +9,15 @@
 ## 项目截图
 
 ### 登录
-
-![Image text](https://github.com/lin-xin/manage-system/raw/master/screenshots/wms3.png)
+<a>
+    <img src=".\screenshots\2.png" alt="vue">
+</a>
 
 ### 首页
 
-![Image text](.\screenshots\1.png)
-
+<a>
+    <img src=".\screenshots\2.png" alt="vue">
+</a>
 ## 根据vue-manage-system后台管理系统改编
 
 原作者lin-xin (微信号：linxin_20)
