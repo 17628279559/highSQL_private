@@ -42,21 +42,21 @@
 				  <template #default="scope">
 					  <el-link :href="scope.row.url" target="_blank" underline="false">{{ scope.row.title }}</el-link>
 				  </template>
-				  
 			    </el-table-column>
 				<el-table-column
 				  prop="rating"
-				  label="用户评分"
-				  width="50">
+				  label="评分"
+				  width="60">
 				</el-table-column>
 				<el-table-column
 				  prop="timestamp"
 				  label="评分时间"
-				  width="180">
+				  width="160">
 				</el-table-column>
 				<el-table-column
 				  prop="tagid"
-				  label="标签id">
+				  label="标签id"
+				  width="80">
 				</el-table-column>
 				<el-table-column
 				  prop="tag_name"
@@ -110,5 +110,10 @@ import Axios from 'axios';
 	    margin: auto;
 	    width: 135px;
 	    height: 201px;
+	}
+</style>
+<style>
+	.el-table .cell {
+    white-space: pre;
 	}
 </style>

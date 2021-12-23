@@ -72,6 +72,8 @@ def function_B(request):
 	result_field = appbk_sql.mysql_com(sql)
 	res = {}
 	res['data'] = result_field
+	for i in res['data']:
+		i['picture'] = "https://gitee.com/snaketao/douban-img/raw/master/imgg/"+str(i['movieid'])+".jpg"
 	return HttpResponse(json.dumps(res))
 
 
@@ -82,6 +84,8 @@ def function_C(request):
 	result_field = appbk_sql.mysql_com(sql)
 	res = {}
 	res['data'] = result_field
+	for i in res['data']:
+		i['picture'] = "https://gitee.com/snaketao/douban-img/raw/master/imgg/"+str(i['movieid'])+".jpg"
 	return HttpResponse(json.dumps(res))
 
 @csrf_exempt
@@ -91,5 +95,7 @@ def function_D(request):
 	result_field = appbk_sql.mysql_com(sql)
 	res = {}
 	res['data'] = result_field
+	for i in res['data']:
+		i['picture'] = "https://gitee.com/snaketao/douban-img/raw/master/imgg/"+str(i['movieid'])+".jpg"
 	return HttpResponse(json.dumps(res))
 

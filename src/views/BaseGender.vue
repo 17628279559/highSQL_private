@@ -24,31 +24,31 @@
   			</el-card>
 			<el-table
 			    :data="tableData"
-			    height="250"
+			    height="80%"
 			    border
 			    style="width: 100%">
 			    <el-table-column
 			      prop="movieid"
 			      label="电影ID"
-			      width="180">
-			    </el-table-column>
-			    <el-table-column
-			      prop="movie_title"
-			      label="电影名字"
-			      width="180">
-			    </el-table-column>
-			    <el-table-column
-			      prop="url"
-			      label="电影链接">
+			      width="75">
 			    </el-table-column>
 				<el-table-column
 				  prop="picture"
-				  label="电影图片">
-					<template #default="scope">
-					    <el-image class="table-td-thumb" :src="scope.row.thumb" :preview-src-list="[scope.row.thumb]">
-					    </el-image>
-					</template>
+				  label="电影图片" 
+				  width="135">
+				  <template #default="scope">
+				      <el-image class="pict" :src="scope.row.picture" :preview-src-list="[scope.row.picture]">
+				      </el-image>
+				  </template>
 				</el-table-column>
+			  <el-table-column
+			      prop="title"
+			      label="电影名字"
+			      width="300" >
+				  <template #default="scope">
+					  <el-link :href="scope.row.url" target="_blank" underline="false">{{ scope.row.title }}</el-link>
+				  </template>
+			  </el-table-column>
 				<el-table-column
 				  prop="average_rating"
 				  label="平均评分">
@@ -100,4 +100,10 @@ import Axios from 'axios';
 	    width: 50px;
 	    height: 201px;
 	}
+		.pict{
+		display: block;
+	    margin: auto;
+	    width: 135px;
+	    height: 201px;
+}
 </style>
