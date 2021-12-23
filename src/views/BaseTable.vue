@@ -76,6 +76,7 @@
 import Axios from 'axios';
 
   export default {
+	name: "idselect",
     data() {
       return {
 		tableData: [],

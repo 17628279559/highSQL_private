@@ -16,42 +16,42 @@ const routes = [
                 meta: {
                     title: '系统首页'
                 },
-                component: () => import ( /* webpackChunkName: "dashboard" */ "../views/Dashboard.vue")
+                component: () => import (  "../views/Dashboard.vue")
             }, {
                 path: "/IDselect",
                 name: "idselect",
                 meta: {
                     title: 'ID查询'
                 },
-                component: () => import ( /* webpackChunkName: "table" */ "../views/BaseTable.vue")
+                component: () => import (  "../views/BaseTable.vue")
             }, {
                 path: '/KEYselect',
                 name: 'keyselect',
                 meta: {
                     title: '关键词查询'
                 },
-                component: () => import (/* webpackChunkName: "user" */ '../views/BaseKey.vue')
+                component: () => import ( '../views/BaseKey.vue')
             },{
                 path: '/Top',
                 name: 'top',
                 meta: {
                     title: 'top风格查询'
                 },
-                component: () => import (/* webpackChunkName: "user" */ '../views/BaseTop.vue')
+                component: () => import ( '../views/BaseTop.vue')
             },{
                 path: '/Gender',
                 name: 'gender',
                 meta: {
                     title: '性别推荐'
                 },
-                component: () => import (/* webpackChunkName: "user" */ '../views/BaseGender.vue')
+                component: () => import ( '../views/BaseGender.vue')
             },{
                 path: '/404',
                 name: '404',
                 meta: {
                     title: '找不到页面'
                 },
-                component: () => import (/* webpackChunkName: "404" */ '../views/404.vue')
+                component: () => import ( '../views/404.vue')
             }, 
 			
         ]
@@ -61,7 +61,7 @@ const routes = [
         meta: {
             title: '登录'
         },
-        component: () => import ( /* webpackChunkName: "login" */ "../views/Login.vue")
+        component: () => import (  "../views/Login.vue")
     }
 ];
 

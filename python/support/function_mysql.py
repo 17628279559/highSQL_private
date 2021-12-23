@@ -31,7 +31,7 @@ def function_A(id,ban_movieid = []):
 			movies[str(item['movieid'])]["tag"] = []
 		num+=1
 		if num == 20:
-			break;
+			break
 
 
 	sql3 = "SELECT a.movieid,a.relevance, b.tag FROM `genome-scores` a , `genome-tags` b WHERE a.tagid = b.tagid AND movieid IN ({}) ORDER BY a.movieid,a.relevance DESC;".format(','.join(movieids))
@@ -81,3 +81,4 @@ if __name__=="__main__":
 	#function_B("girls")
 	#function_C("Animation")
 	#function_D("Man")
+	pass

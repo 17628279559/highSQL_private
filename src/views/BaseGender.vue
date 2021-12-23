@@ -66,6 +66,7 @@
 <script>
 import Axios from 'axios';
   export default {
+	name: "gender",
     data() {
       return {
         options: [{
@@ -86,6 +87,8 @@ import Axios from 'axios';
                 Axios.get(api).then(response => {
                     if (response.data) {
                         this.tableData = response.data.data;
+						var namee = document.getElementById("name_");
+						namee.innerHTML = "最受" + gender + "欢迎的20部电影"
                     }
         	});
           },

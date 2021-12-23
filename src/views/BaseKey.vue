@@ -50,6 +50,7 @@
 <script>
 import Axios from 'axios';
   export default {
+	name: "keyselect",
     data() {
       return {
 		tableData: [],
@@ -63,6 +64,8 @@ import Axios from 'axios';
                 Axios.get(api).then(response => {
                     if (response.data) {
                         this.tableData = response.data.data;
+						var namee = document.getElementById("name_");
+						namee.innerHTML = "含有" + key_word + "关键词的电影"
                     }
         	});
           },

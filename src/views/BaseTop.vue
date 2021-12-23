@@ -20,7 +20,7 @@
                     <el-button type="primary" @click="adddata()" style="width: 15%;">查询</el-button>
               </div>
   			<el-card>
-  				<span>风格TOPk查询</span>
+  				<span id="name_">风格TOPk查询</span>
   			</el-card>
 			<el-table
 			    :data="tableData"
@@ -66,6 +66,7 @@
 <script>
 import Axios from 'axios';
   export default {
+    name: "top",
     data() {
       return {
         options: [{
@@ -137,6 +138,8 @@ import Axios from 'axios';
                 Axios.get(api).then(response => {
                     if (response.data) {
                         this.tableData = response.data.data;
+                        var namee = document.getElementById("name_");
+                        namee.innerHTML = type_of_movie + "类型最受欢迎的20部电影"
                     }
         	});
           },
