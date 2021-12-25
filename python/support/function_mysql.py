@@ -12,6 +12,7 @@ import appbk_sql
 import sys
 import numpy as np
 
+#查询id对应的人看过的所有电影，并且输出每个电影最相关的前三个标签
 def function_A(id,ban_movieid = []):
 	sql1 = "SELECT `name` FROM `users` WHERE `userid` = {}".format(str(id))
 	name = appbk_sql.mysql_com(sql1)[0]['name']
@@ -54,14 +55,15 @@ def function_A(id,ban_movieid = []):
 	movies["ban_movieid"] = ban_movieid.append(movieids)
 	return movies
 
-
+#查询含有关键字的电影
 def function_B(key_word):
 	sql = "SELECT title FROM `movies` where LOWER(title)  like LOWER('%{}%');".format(key_word)
 	result_field = appbk_sql.mysql_com(sql)
 	for item in result_field:
 		print(item)
 	return result_field
-	
+
+#查询不同风格类型的最受欢迎的20部电影
 def function_C(type_of_movie):
 	sql = "select movie_title , average_rating , num_of_rating from `genres` where `genres`.genres = '{}';".format(type_of_movie)
 	result_field = appbk_sql.mysql_com(sql)
@@ -69,6 +71,7 @@ def function_C(type_of_movie):
 	#	print(item)
 	return result_field
 
+#查询不同性别最受欢迎的20部电影
 def function_D(gender):
 	sql = "SELECT title , average_rating , num_of_rating from gender_favourite where gender = '{}';".format(gender)
 	result_field = appbk_sql.mysql_com(sql)

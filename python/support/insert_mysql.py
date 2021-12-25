@@ -49,8 +49,8 @@ def function_D_support():
 			appbk_sql.insert_data(sett,'gender_favourite')
 			print(item)
 
-
 if __name__=="__main__":
     #function_insert_average_rating()
 	#function_C_support()
 	#function_D_support()
+	pass

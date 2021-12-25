@@ -64,7 +64,6 @@ def function_A(request):
 	res['data'] = data
 	return HttpResponse(json.dumps(res))
 
-
 @csrf_exempt
 def function_B(request):
 	key_word = str(request.GET.get('key_word',''))
@@ -75,7 +74,6 @@ def function_B(request):
 	for i in res['data']:
 		i['picture'] = "https://gitee.com/snaketao/douban-img/raw/master/imgg/"+str(i['movieid'])+".jpg"
 	return HttpResponse(json.dumps(res))
-
 
 @csrf_exempt
 def function_C(request):

@@ -11,6 +11,7 @@
 import appbk_mongo
 import pandas as pd
 
+#数据处理，构造一个movies对应多个tagid的字典，并插入 mongodb 的movies集合
 def function_insert_movies():
     file1 = pd.read_csv(r'E:\BaiduNetdiskDownload\ml-latest\movies.csv')
     data = []
@@ -46,6 +47,7 @@ def function_insert_movies():
 
     appbk_mongo.insert_data(data,'movies')
 
+#数据处理，构造一个users对应多个movie的字典，并插入 mongodb 的movies集合
 def function_insert_users():
     file1 = pd.read_csv(r'E:\BaiduNetdiskDownload\ml-latest\users.csv')
     data = []
@@ -77,9 +79,7 @@ def function_insert_users():
             
     appbk_mongo.insert_data(data,'users')
 
-
-
-
 if __name__=="__main__":
     #function_insert_movies()
     #function_insert_users()
+    pass

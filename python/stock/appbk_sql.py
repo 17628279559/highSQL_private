@@ -27,9 +27,7 @@ g_db_name = "highSQL" #数据库名
 g_db_port = 3306
 
 
-"""
-功能：解决datatime字段输不出json格式错误
-"""
+#解决datatime字段输不出json格式错误
 class CJsonEncoder(json.JSONEncoder):  
     def default(self, obj):  
         if isinstance(obj, datetime.datetime):  
@@ -39,10 +37,7 @@ class CJsonEncoder(json.JSONEncoder):
         else:  
             return json.JSONEncoder.default(self, obj)  
 
-
-"""
-功能：连接数据
-"""
+#连接数据
 def connect_db(db_name=g_db_name):
     db = ''
     try:
@@ -53,13 +48,7 @@ def connect_db(db_name=g_db_name):
 
     return db
 
-
-
-"""
-功能：执行mysql命令，返回结果
-输入：sql_com, sql命令
-返回：mysql查询结果数组
-"""
+#执行mysql命令，返回结果
 def mysql_com(sql_com, db_name=g_db_name):
     #连接数据库
     for i in range(3):
@@ -81,14 +70,7 @@ def mysql_com(sql_com, db_name=g_db_name):
         db.close()
     return result
 
-"""
-功能：执行mysql插入命令
-输入：data， 需要插入的数据，list，每行数据为dict，key为数据库字段名，value为数据值
-输入：table_name, 数据库名
-返回：mysql查询结果数组
-"""
-
-
+#执行mysql插入命令
 def insert_data(data, table_name, db_name=g_db_name):
     # 连接数据库
     for i in range(3):
@@ -126,13 +108,7 @@ def insert_data(data, table_name, db_name=g_db_name):
         print("ERROR", e)
         return e
 
-
-"""
-功能：执行mysql插入命令,更新插入
-输入：data， 需要插入的数据，list，每行数据为dict，key为数据库字段名，value为数据值
-输入：table_name, 数据库名
-返回：mysql查询结果数组
-"""
+#执行mysql插入命令,更新插入
 def insert_update_data(data, table_name, db_name=g_db_name):
     # 连接数据库
     for i in range(3):
@@ -172,10 +148,7 @@ def insert_update_data(data, table_name, db_name=g_db_name):
     except Exception as e:
         return e
 
-"""
-功能: 多行数据插入数据库
-输入: data_list, 数据列表
-"""
+#多行数据插入数据库
 def insert_data_list(data_list, table_name, db_name=g_db_name):
     db = MySQLdb.connect(host = g_db_host, port=g_db_port, user=g_db_user, passwd = g_db_pw, db = db_name, charset='utf8mb4')
     cursor = db.cursor()
@@ -252,7 +225,6 @@ def insert_data_list(data_list, table_name, db_name=g_db_name):
     db.commit()
     db.close()
     return 0
-
 
 if __name__=="__main__":
     pass

@@ -17,8 +17,9 @@ import os
 import re
 url = "https://www.douban.com/search?q={}"
 requests.packages.urllib3.disable_warnings()
+headers = {'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36'}
 
-
+#从mysql获取所有id和title
 def get_name():
     sql = "select movieid,title from movies where url is null;"
     result = appbk_sql.mysql_com(sql)
@@ -26,6 +27,8 @@ def get_name():
     for i in result:
       data.append([i['movieid'],i['title']])
     return data
+
+#从豆瓣爬取每个电影的链接和图片链接并插入数据库
 def function_insert_picture():
     ip_data = []
     with open(r"ip_av.txt") as ip:
@@ -36,8 +39,6 @@ def function_insert_picture():
             while True:
                 try:
                     iii = choice(ip_data)
-                    
-                    headers = {'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36'}
                     s = requests.session()
                     s.keep_alive = False  # 关闭多余连接
                     data = s.get(url.format(item[1]).replace(' ','%20'), headers=headers,proxies={"https":iii},verify=False)
@@ -59,6 +60,8 @@ def function_insert_picture():
                 appbk_sql.mysql_com(sql)
             except Exception as e:
                 print(e)
-
+    
 if __name__ == '__main__':
-    function_insert_picture()
+    #get_name()
+    #function_insert_picture()
+    pass
