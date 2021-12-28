@@ -20,10 +20,10 @@ import re
 import platform
 
 #带选择数据库功能
-g_db_host = "39.105.159.127" #服务器
-g_db_user = "root"
-g_db_pw = "zwt360"
-g_db_name = "highSQL" #数据库名
+g_db_host = "" #服务器
+g_db_user = ""
+g_db_pw = ""
+g_db_name = "" #数据库名
 g_db_port = 3306
 
 

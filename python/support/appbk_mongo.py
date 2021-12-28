@@ -13,7 +13,7 @@ from pymongo import MongoClient
 import re
 import platform
 # 数据库
-MONGO_URL = "mongodb://snaketao:2rgNHvRkGRvaySPw@39.105.159.127:27017/?authSource=admin"  # 默认端口
+MONGO_URL = "mongodb://                     @             /?authSource=admin"  # 默认端口
 MONGO_DB = "highSQL"
 
 #连接数据

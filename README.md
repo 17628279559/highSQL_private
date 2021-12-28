@@ -4,7 +4,12 @@
     <img src=".\screenshots\1.png" alt="vue">
 </a>
 
-基于 Vue3 + Element Plus + django的电影查询网站。[线上地址](https://github.com/17628279559/highSQL_private)
+基于 Vue3 + Element Plus + django的电影查询网站。[线上地址](zwt666.top)
+
+[线上仓库]https://github.com/17628279559/highSQL_private
+
+## 用于2019级数据科学与大数据技术21年秋学期 高技数据库大作业
+
 
 ## 项目截图
 
@@ -18,12 +23,18 @@
 <a>
     <img src=".\screenshots\2.png" alt="vue">
 </a>
+
 ## 根据vue-manage-system后台管理系统改编
 
 原作者lin-xin (微信号：linxin_20)
+现作者早已习惯(微信号：w--oo-oo-oo-oooo-o)
 
 ```
 安装步骤
+
+前端可以直接使用，后端自己去添加服务器和mysql地址    包括appbk_mongo appbk_mysql
+
+
 git clone git@github.com:17628279559/highSQL_private.git      // 把模板下载到本地
 
 
